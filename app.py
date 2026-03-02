@@ -1,0 +1,17 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return jsonify({"message": "HR Suite Application is running"})
+
+@app.route("/attendance")
+def attendance():
+    return jsonify({
+        "employee": "John Doe",
+        "status": "Present"
+    })
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
